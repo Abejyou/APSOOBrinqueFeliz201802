@@ -1,0 +1,48 @@
+<form class="mdl-grid" method="POST">
+  <div class="mdl-cell mdl-cell--8-col">
+    <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="nome" id="nome">
+      <label class="mdl-textfield__label" for="nome">Nome</label>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">
+    <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="quantidade" id="quantidade" pattern="-?[0-9]*(\.[0-9]+)?">
+      <label class="mdl-textfield__label" for="quantidade">Quantidade</label>
+      <span class="mdl-textfield__error">Insira apenas numero!</span>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet">
+    <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" name="valor" id="valor" pattern="-?[0-9]*(\.\,[0-9]+)?">
+      <label class="mdl-textfield__label" for="valor">Valor unit&#225;rio</label>
+      <span class="mdl-textfield__error">Insira apenas numero!</span>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--12-col">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored align-right">
+      <i class="material-icons">add</i> Adicionar
+    </button>
+  </div>
+</form>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <table width="100%" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Produto</th>
+          <th>Quantidade</th>
+          <th>Valor unit&#225;rio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr js-for>
+          <td class="mdl-data-table__cell--non-numeric" data="nome"></td>
+          <td data="quantidade"></td>
+          <td data="valor"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

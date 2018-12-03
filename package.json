@@ -1,0 +1,61 @@
+{
+  "name": "BrinquedoFeliz",
+  "version": "2.0.0",
+  "description": "description",
+  "main": "index.html",
+  "user-agent": "Mozilla/5.0 (%osinfo) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/%chromium_ver Safari/537.36 %name/%ver(%nwver)",
+  "window": {
+    "title": "Brinquedo Feliz",
+    "icon": "images/icon.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 1280,
+    "height": 750,
+    "fullscreen": false,
+    "transparent": false,
+    "position": "center"
+  },
+  "webkit": {
+    "plugin": true,
+    "java": true
+  },
+  "chrome-extension://*": "--load-extension=path/to/extension",
+  "chromium-args": "--enable-webgl --ignore-gpu-blacklist",
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.14.6"
+  },
+  "build": {
+    "nwVersion": "0.34.5",
+    "nwFlavor": "sdk",
+    "packed": true,
+    "strippedProperties": [
+      "build"
+    ],
+    "files": [
+      "index.html",
+      "js/**/*",
+      "images/**/*"
+    ],
+    "excludes": [
+      "js/main.js",
+      "images/icons.zip",
+      "images/icon.ico",
+      "images/icon.icns"
+    ],
+    "win": {
+      "icon": "images/icon.ico",
+      "copyright": "copyright"
+    },
+    "mac": {
+      "name": "neoMac",
+      "icon": "images/icon.icns",
+      "copyright": "copyright"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "build --tasks win-x86 --mirror https://dl.nwjs.io/ .",
+    "dist-mac": "build --tasks mac-x64 --mirror https://dl.nwjs.io/ .",
+    "start": "run --x64 --mirror https://dl.nwjs.io/ ."
+  }
+}
